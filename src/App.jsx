@@ -1,10 +1,11 @@
 import React from 'react'
-import { Hero, Sales, FlexContent, Stories, Footer } from './componenets'
+import { Navbar, Hero, Sales, FlexContent, Stories, Footer } from './componenets'
 import { heroapi, popularsales, toprateslaes, highlight, sneaker, story, footerAPI } from './data/data'
 
 export default function App() {
   return (
     <>
+       <Navbar />
        <main className='flex flex-col gap-16 relative'>
           <Hero heroapi={heroapi}/>
           <Sales endpoint={popularsales} ifExists/>

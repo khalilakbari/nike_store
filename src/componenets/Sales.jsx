@@ -2,7 +2,8 @@ import React from 'react'
 import Title from './utils/Title'
 import Item from './utils/Item'
 
-const Sales = ({ ifExists, endpoint: { title, items} }) => {
+
+const Sales = ({ ifExists, endpoint: { title, items } }) => {
   // console.log(endpoint);
   return (
     <>
