@@ -1,12 +1,14 @@
 import React from 'react'
-import { Hero } from './componenets'
-import { heroapi } from './data/data'
+import { Hero, Sales } from './componenets'
+import { heroapi, popularsales, toprateslaes } from './data/data'
 
 export default function App() {
   return (
     <>
-       <main>
+       <main className='flex flex-col gap-16 relative'>
           <Hero heroapi={heroapi}/>
+          <Sales endpoint={popularsales} ifExists/>
+          <Sales endpoint={toprateslaes}/>
        </main>
     </>
   )
