@@ -2,7 +2,7 @@ import React from "react";
 import { FiChevronsLeft } from "react-icons/fi";
 import { AiOutlineClose } from "react-icons/ai";
 
-const CartCount = ({ onCartToggle }) => {
+const CartCount = ({ onCartToggle,totalQTY, onClearCartItems }) => {
   return (
     <>
       <div className="bg-white h-11 flex items-center justify-between px-3 sticky
@@ -15,12 +15,13 @@ const CartCount = ({ onCartToggle }) => {
             <h1 className="text-base font-medium text-slate-900">
               Your Cart
               <span className="bg-theme-cart text-slate-100 rounded px-1 py-0.5 font-normal text-xs">
-                (items)</span>
+                ({totalQTY}items)</span>
             </h1>
           </div>
         </div>
         <div className="flex items-center">
-            <button type="button" className="rounded bg-theme-cart active:scale-90 p-0.5">
+            <button type="button"  onClick={onClearCartItems}
+                className="rounded bg-theme-cart active:scale-90 p-0.5">
                 <AiOutlineClose className='w-5 h-5 text-white stroke-[2]'/>
             </button>
         </div>

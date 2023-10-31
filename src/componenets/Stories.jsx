@@ -57,7 +57,7 @@ const Stories = ({ story: { title, news}}) => {
                              </div>
                              <div className='grid items-center justify-items-center px-4'>
                                  <h4 className='text-base font-semibold lg:text-sm'>{val.title}</h4>
-                                 <p className='text-sm text-justify lg:text-xs'>{truncate(val.text,{length: 180})}</p>
+                                 <p className='text-sm text-justify lg:text-xs'>{truncate(val.text,{length: 190})}</p>
                              </div>
                              <div className='flex items-center justify-center px-4 w-full'>
                                 <a href={val.url} target='_blank' role={'button'} className='w-full bg-gradient-to-b from-slate-900 to-black py-1.5

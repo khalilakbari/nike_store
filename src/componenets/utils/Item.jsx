@@ -1,8 +1,24 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { AiFillStar } from "react-icons/ai";
 import { HiShoppingBag } from "react-icons/hi";
+import { setAddItemToCart } from "../../app/CartSlice";
 
 const Item = ({ ifExists, id, color, shadow, title, text, img, btn, rating, price }) => {
+
+  const dispatch = useDispatch()
+
+  const onAddToCart = () => {
+    const item = { id, color, shadow, title, text, img, price }
+    dispatch(setAddItemToCart(item))
+  }
+ 
+  const onCartToggle = () => {
+    dispatch(setOpenCart({
+     cartState: true
+    }))
+ }
+
   return (
     <>
       <div className={`relative bg-gradient-to-b ${color} ${shadow} grid items-center
@@ -23,24 +39,26 @@ const Item = ({ ifExists, id, color, shadow, title, text, img, btn, rating, pric
           </div>
 
           <div className="flex items-center gap-3">
-            <button type="button" className="bg-white/90 blur-effect-theme buttom-theme p-0.5 shadow shadow-sky-200 rounded">
+            <button type="button" onClick={onAddToCart}
+              className="bg-white/90 blur-effect-theme buttom-theme p-0.5 shadow shadow-sky-200 rounded" >
               <HiShoppingBag className="icon-style text-slate-900" />
             </button>
-            <button type="button" 
-              className="bg-white/90 blur-effect-theme buttom-theme px-2 py-1 shadow
-               shadow-sky-200 rounded text-sm text-black">
-                {btn}
+            <button 
+              type="button" onClick={() => {onAddToCart(), onCartToggle()}}
+              className="bg-white/90 blur-effect-theme buttom-theme px-2 py-1 shadow 
+               shadow-sky-200 rounded text-sm text-black active:scale-110">
+              {btn}
             </button>
           </div>
 
         </div>
         <div className={`flex items-center ${ifExists ? 'absolute top-5 right-1' : 'justify-center'}`}>
           <img
-           src={img} 
-           alt={`img/item-img${id} `}
-           className={`transitions-theme hover:-rotate-12
+            src={img}
+            alt={`img/item-img${id} `}
+            className={`transitions-theme hover:-rotate-12
             ${ifExists ? 'h-auto w-64 lg:w-56 md:w-48 -rotate-[35deg]' : 'h-36 w-64'}`}
-            />
+          />
         </div>
       </div>
     </>

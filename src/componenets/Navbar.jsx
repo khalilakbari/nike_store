@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { setOpenCart, selectTotalQTY } from '../app/CartSlice';
+
 import { FiSearch } from 'react-icons/fi'
 import { AiOutlineHeart } from 'react-icons/ai'
 import { LiaShoppingBagSolid } from "react-icons/lia";
 import logo from '../assets/imagees/logo.png'
-import { useDispatch } from 'react-redux';
-import { setOpenCart } from '../app/CartSlice';
 
 const Navbar = () => {
 
   const[navState, setNavState] = useState(false)
   const dispatch = useDispatch()
+  const totalQTY = useSelector(selectTotalQTY);
 
   const onCartToggle = () => {
      dispatch(setOpenCart({
@@ -60,7 +62,7 @@ const Navbar = () => {
                            flex items-center justify-center cursor-pointer hover:scale-110 transition-all duration-300 shadow
                             ${navState ? 'bg-slate-900 text-slate-100 shadow-slate-900':
                              'bg-slate-100 text-slate-900 shadow-slate-100'}`}>
-                            0
+                              {totalQTY}
                          </div>
                       </button>
                   </li>

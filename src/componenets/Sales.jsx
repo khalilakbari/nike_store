@@ -4,7 +4,7 @@ import Item from './utils/Item'
 
 
 const Sales = ({ ifExists, endpoint: { title, items } }) => {
-  // console.log(endpoint);
+ 
   return (
     <>
        <div className='nike-container'>

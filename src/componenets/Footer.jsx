@@ -1,4 +1,3 @@
-import { list } from "postcss";
 import React from "react";
 
 const Footer = ({ footerAPI: { titles, links } }) => {
