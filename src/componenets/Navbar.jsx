@@ -5,7 +5,7 @@ import { setOpenCart, selectTotalQTY } from '../app/CartSlice';
 import { FiSearch } from 'react-icons/fi'
 import { AiOutlineHeart } from 'react-icons/ai'
 import { LiaShoppingBagSolid } from "react-icons/lia";
-import logo from '../assets/imagees/logo.png'
+import logo from '../assets/logo.png'
 
 const Navbar = () => {
 

@@ -15,7 +15,7 @@ const CartCount = ({ onCartToggle,totalQTY, onClearCartItems }) => {
             <h1 className="text-base font-medium text-slate-900">
               Your Cart
               <span className="bg-theme-cart text-slate-100 rounded px-1 py-0.5 font-normal text-xs">
-                ({totalQTY}items)</span>
+                ({totalQTY} items)</span>
             </h1>
           </div>
         </div>
